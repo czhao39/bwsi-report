@@ -1,0 +1,96 @@
+body {
+    font-weight: 300;
+}
+
+header, main, footer {
+    padding-left: 250px;
+}
+
+@media only screen and (max-width: 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+nav a.button-collapse {
+    margin-left: 1rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+}
+
+.overview-content {
+    position: absolute;
+    top: 130px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.divider {
+    width: 80%;
+    margin: 20px auto 0 auto;
+}
+
+footer {
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        }
+    50% {
+        -webkit-transform: scale3d(1.3, 1.3, 1.3);
+        transform: scale3d(1.3, 1.3, 1.3);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.3, 1.3, 1.3);
+        transform: scale3d(1.3, 1.3, 1.3);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@media (max-width: 640px) and (min-width: 376px) {
+    .page-title {font-size: 1.8rem;}
+}
+
+@media (max-width: 375px) {
+    .page-title {font-size: 1.2rem;}
+}

@@ -7,8 +7,10 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="static/index.css">
 
-        <link rel="icon" href="favicon.png">
+        <link rel="icon" href="static/favicon.png">
 
         <meta name="author" content="Haicheng Charles Zhao">
         <meta name="description" content="My experience at the 2016 Beaver Works Summer Institute.">
@@ -17,31 +19,68 @@
 
         <!-- Scripts -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     </head>
 
     <body>
         <header>
             <nav>
-                <div class="nav-wrapper">
+                <div class="nav-wrapper teal darken-2">
                     <a class="brand-logo page-title center">BWSI Report</a>
                     <a data-activates="slide-out" class="button-collapse waves-effect waves-light"><i class="material-icons">menu</i></a>
                     <ul id="slide-out" class="side-nav fixed">
-                        <li><a href="#intro"><i class="material-icons left">home</i>Introduction</a></li>
+                        <li><a href="#overview">Overview</a></li>
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li>
+                                    <a class="collapsible-header">Weekly Experience</a>
+                                    <div class="collapsible-body">
+                                        <ul>
+                                            <li><a href="#week1">Week 1</a></li>
+                                            <li><a href="#week2">Week 2</a></li>
+                                            <li><a href="#week3">Week 3</a></li>
+                                            <li><a href="#week4">Week 4</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#conclusions">Technical Conclusions</a></li>
+                        <li><a href="#reflections">Personal Reflections</a></li>
                     </ul>
                 </div>
             </nav>
        </header>
 
         <main>
-            <div id="intro" class="page-section teal lighten-2 valign-wrapper scrollspy">
+            <div id="overview" class="teal lighten-2 valign-wrapper scrollspy">
                 <div class="valign center-align intro-content container">
-                    wheeee
+                    <p>The Beaver Works Summer Institute is a one-month summer program teaching high schoolers about autonomous vehicles.</p>
                 </div>
             </div>
 
-            <div id="skills" class="section scrollspy container">
-                <h2 class="center-align">Skills</h2>
+            <div id="weekly" class="section scrollspy container">
+                <h3 class="center-align">Weekly Experience</h3>
+                <div id="week1" class="scrollspy">
+                    <h4>Week 1</h4>
+                </div>
+                <div id="week2" class="scrollspy">
+                    <h4>Week 2</h4>
+                </div>
+                <div id="week3" class="scrollspy">
+                    <h4>Week 3</h4>
+                </div>
+                <div id="week4" class="scrollspy">
+                    <h4>Week 4</h4>
+                </div>
+            </div>
+
+            <div id="conclusions" class="section scrollspy container">
+                <h3 class="center-align">Technical Conclusions</h3>
+            </div>
+
+            <div id="reflections" class="section scrollspy container">
+                <h3 class="center-align">Personal Reflections</h3>
             </div>
         </main>
 
@@ -52,5 +91,6 @@
         <!-- Scripts -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.2.0/scrollreveal.min.js"></script>
         <script type="text/javascript" src="https://use.fontawesome.com/6410c3e3d5.js"></script>
+        <script type="text/javascript" src="static/index.js"></script>
     </body>
 </html>
