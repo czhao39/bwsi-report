@@ -92,7 +92,7 @@ nav a.button-collapse {
 }
 
 #racecar-parallax {
-    margin-top: 100vh;
+    margin-top: calc(100vh - 65px);
 }
 
 .parallax img {
