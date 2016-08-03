@@ -56,6 +56,13 @@ nav a.button-collapse {
     z-index: 1;
 }
 
+#bw-logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+
 .overview-content {
     z-index: 2;
 }
