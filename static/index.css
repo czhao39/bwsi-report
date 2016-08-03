@@ -25,11 +25,12 @@ nav a.button-collapse {
 }
 
 #slide-out {
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 #slide-out li {
     opacity: 0;
+    padding: 10px 0;
 }
 
 #overview {
@@ -47,14 +48,23 @@ nav a.button-collapse {
     z-index: 0;
 }
 
-.overview-content {
+.overlay-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
     z-index: 1;
+}
+
+.overview-content {
+    z-index: 2;
 }
 
 .down-btn {
     width: 100%;
     position: absolute;
     bottom: 0;
+    z-index: 2;
 }
 
 .arrow {
