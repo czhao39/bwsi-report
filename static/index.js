@@ -11,5 +11,5 @@ $document.ready(function() {
     
     $(".scrollspy").scrollSpy();
     var sr = ScrollReveal();
-    sr.reveal(".report-img", {duration: 1000});
+    sr.reveal(".report-img, .report-img-float", {duration: 1000});
 });
