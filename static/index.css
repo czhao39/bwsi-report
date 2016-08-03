@@ -84,6 +84,10 @@ nav a.button-collapse {
     color: black !important;
 }
 
+.report-img {
+    width: 100%;
+}
+
 #weekly {
     margin-top: 100vh;
 }
