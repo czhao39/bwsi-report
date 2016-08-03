@@ -20,6 +20,20 @@ nav a.button-collapse {
     font-size: 2.5rem;
 }
 
+#slide-out li {
+    opacity: 0;
+}
+
+#overview {
+    position: absolute;
+    top: 0;
+    left: 250px;
+    right: 0;
+    bottom: 0;
+    background: url("background.png");
+    background-size: cover;
+}
+
 .overview-content {
     position: absolute;
     top: 130px;
@@ -27,6 +41,10 @@ nav a.button-collapse {
     left: 0;
     right: 0;
     opacity: 0;
+}
+
+#weekly {
+    margin-top: 100vh;
 }
 
 .divider {
