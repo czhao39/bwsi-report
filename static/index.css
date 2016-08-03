@@ -166,6 +166,9 @@ footer {
     .report-img-float {
         width: 50%;
     }
+    #bw-logo {
+        width: 50%;
+    }
 }
 
 @media (max-width: 640px) and (min-width: 376px) {
