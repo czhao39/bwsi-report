@@ -3,7 +3,10 @@ $document = $(document);
 $document.ready(function() {
 
     $(".overview-content").velocity({top: 90, opacity: 1}, {duration: 1000}, {queue: false});
-    
+   
+    Materialize.showStaggeredList("#slide-out");
+
+    Materialize.fadeInImage("#overview");
     $(".button-collapse").sideNav({closeOnClick: false, menuWidth: 250});
     
     $(".scrollspy").scrollSpy();
