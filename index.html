@@ -26,7 +26,6 @@
         <header>
             <nav>
                 <div class="nav-wrapper white">
-                <!--<a class="brand-logo page-title center">BWSI Report</a>-->
                     <a data-activates="slide-out" class="button-collapse waves-effect waves-light"><i class="material-icons">menu</i></a>
                     <ul id="slide-out" class="side-nav fixed">
                         <li><a href="#overview">Overview</a></li>
@@ -77,12 +76,12 @@
                     <p>Edelman explained two different controllers: bang-bang and proportional-integral-derivative (PID). Bang-bang is the simplest type of controller, but it may never reach a steady state. A bang-bang controller consists of several discrete groups of inputs that each produce a certain, hard-coded output. A robot whose direction is controlled by a bang-bang controller may produce the following position vs. time graph:</p>
                     <img class="report-img" src="static/img/bangbang.png">
                     <p>On the other hand, PID controllers produce an output based on the error, the integral of the error with respect to time, and the derivative of the error with respect to time. Formally:</p>
-                    math
-                    <p>where Kp, Ki, and Kd are nonnegative coefficients for the proportional, integral, and derivative terms, respectively. The proportional term is the main term, the integral term helps to drive the error to zero more quickly, and the derivative term dampens the controller to provide stability. In unstable systems, the error gradually increases as the controller continuously overshoots the desired state. An unstable system may produce a graph like the following:</p>
+                    <p>$$u(t) = K_{p}e(t) + K_{i}\int e(\tau)d\tau + K_{d}\frac{de(t)}{dt}$$</p>
+                    <p>where $K_p$, $K_i$, and $K_d$ are nonnegative coefficients for the proportional, integral, and derivative terms, respectively. The proportional term is the main term, the integral term helps to drive the error to zero more quickly, and the derivative term dampens the controller to provide stability. In unstable systems, the error gradually increases as the controller continuously overshoots the desired state. An unstable system may produce a graph like the following:</p>
                     <img class="report-img" src="static/img/unstable.png">
                     <p>On the other hand, a properly tuned PID controller would produce results like the following, eventually resulting in a steady state:</p>
                     <img class="report-img" src="static/img/stable.png">
-                    <p>The coefficients are generally tuned empirically. To do so, initially only have a proportional term and increase Kp until the system becomes unstable. Then lower Kp so that the system becomes stable and add an integral term, increasing Ki until the system reaches a steady state in reasonable time. Then add a derivative term, increasing Kd until the system is stable.</p>
+                    <p>The coefficients are generally tuned empirically. To do so, initially only have a proportional term and increase $K_p$ until the system becomes unstable. Then lower $K_p$ so that the system becomes stable and add an integral term, increasing $K_i$ until the system reaches a steady state in reasonable time. Then add a derivative term, increasing $K_d$ until the system is stable.</p>
                     <p>The challenge for the week was to use our knowledge of control systems and ROS to program a wall-follower. Our wall-follower used data from a Lidar as input. The Lidar gathers data along a 2-dimensional plane and returns a list of ranges, which are distances to objects. In total, it returns 1081 evenly spaced ranges over 270°, essentially giving points in polar coordinates. One problem was to figure out the car’s perpendicular distance to the wall. We had to consider that the car would not always be parallel to the wall, and in fact could likely be at quite a steep angle to the wall. We first tried to come up with a solution involving triangulation. However, a team member realized that the car’s perpendicular distance to the wall is simply the closest range returned. Thus, our program was able to determine the car’s perpendicular distance to the wall much more simply and perhaps more reliably than most other teams.</p>
                     <p>The next part was programming a controller for the car’s steering angle. We started off creating a bang-bang controller that worked but was far from optimal as it drove from side to side. We then created a PID controller. We needed to tune the PID values such that the car would stay reasonably close to the wall without ever hitting it. Through experimentation, our coefficients were Kp=0.5, Ki=0.1, Kd=0.05. Our car was successfully able to follow a wall, along with following curves along the wall.</p>
                     <p>Lastly, we created a safety node. This node listened to the Lidar’s scan topic and backed up the car if it came too close to an object. Using a sliding window algorithm, the safety node was able to discern narrow objects such as poles while also accounting for noise in the Lidar’s data. The sliding window algorithm searches for strings of similarly far away points and detects these as objects, but accounts for noise by allowing for some discontinuity along the objects. The safety node was left constantly running, as it would override all the other nodes and prevent the car from crashing into objects.</p>
@@ -112,8 +111,14 @@
         </footer>
 
         <!-- Scripts -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.2.0/scrollreveal.min.js"></script>
-        <script type="text/javascript" src="https://use.fontawesome.com/6410c3e3d5.js"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.2.0/scrollreveal.min.js"></script>
+        <script async type="text/javascript" src="https://use.fontawesome.com/6410c3e3d5.js"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script async type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
         <script type="text/javascript" src="static/index.js"></script>
     </body>
 </html>
