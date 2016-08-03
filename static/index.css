@@ -51,6 +51,22 @@ nav a.button-collapse {
     z-index: 1;
 }
 
+.down-btn {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.arrow {
+    -webkit-transition: text-shadow .5s, color .5s;
+    transition: text-shadow .5s, color .5s;
+}
+
+.arrow:hover {
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.18);
+    color: black !important;
+}
+
 #weekly {
     margin-top: 100vh;
 }
