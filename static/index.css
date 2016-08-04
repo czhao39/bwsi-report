@@ -195,12 +195,17 @@ footer {
     #bw-logo {
         width: 50%;
     }
+    #racecar-parallax {
+        height: 40vh;
+    }
 }
 
 @media (max-width: 640px) and (min-width: 376px) {
     .page-title {font-size: 1.8rem;}
+    #racecar-parallax {height: 30vh;}
 }
 
 @media (max-width: 375px) {
     .page-title {font-size: 1.2rem;}
+    #racecar-parallax {height: 20vh;}
 }
