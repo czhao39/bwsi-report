@@ -16,10 +16,6 @@
         <meta name="description" content="My experience at the 2016 Beaver Works Summer Institute.">
         <meta name="theme-color" content="#00796b">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-
-        <!-- Scripts -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     </head>
 
     <body>
@@ -59,6 +55,7 @@
                             </ul>
                         </li>
                         <li><a href="#reflections">Personal Reflections</a></li>
+                        <li><a href="#thanks">Thanks</a></li>
                     </ul>
                 </div>
             </nav>
@@ -121,7 +118,7 @@
                         <div class="center-align"><img class="report-img" src="static/img/architecture.png"></div>
                         <p>Our first strategy for environment exploration was to always drive towards the middle of the largest empty space detected by the Lidar. Our program used a PID controller very similar to the previous week’s to move the car towards the center of the largest space. This algorithm worked well when driving through narrow corridors that contained obstacles. However, when going through an area with a lot of empty space that did not have walls on both sides, the car failed to drive around without hitting obstacles.</p>
                         <img class="report-img-float right" src="static/img/facedetect.png">
-                        <p>Later, there were several lectures on environment exploration. One solution described was potential fields. The idea of potential fields tries to emulate Coulomb’s Law, which states that $F=\frac{kq_{1}q_{2}}{r^{2}}$ where $F$ is the force between the objects, $q_1$ is the charge of one object, $q_2$ is the charge of the other object, and $r$ is the distance between the objects. Every point returned by the Lidar is given some set charge (we will say it is negative for this example). There is also a large constant negative charge placed behind the car to push it forwards. The car itself is also negative. Our program then sums up all of these force vectors to determine the net force on the car. The program uses this net vector to calculate a steering angle and velocity, which may be forwards or backwards. Thus, the program simulates charges such that the car repels objects while tending to move forward due to the large constant charge behind it. However, this is a very rough simulation of actual electrical potential fields for two reasons. First, we assume that the car is a point charge that has no volume, which would sometimes cause the back of the car to clip an object because the Lidar is located at the front of the car and may have already made it past the object. Secondly, because force equals mass times acceleration, if we were to strictly follow Coulomb’s Law, acceleration rather than velocity should have been directly proportional to $\frac{q}{r^{2}}$.</p>
+                        <p>Later, there were several lectures on environment exploration. One solution described was potential fields. The idea of potential fields tries to emulate Coulomb’s Law, which states that $F=\frac{kq_{1}q_{2}}{r^{2}}$ where $F$ is the force between the objects, $q_1$ is the charge of one object, $q_2$ is the charge of the other object, $r$ is the distance between the objects, and $k$ is a constant (Coulomb's constant). Every point returned by the Lidar is given some set charge (we will say it is negative for this example). There is also a large constant negative charge placed behind the car to push it forwards. The car itself is also negative. Our program then sums up all of these force vectors to determine the net force on the car. The program uses this net vector to calculate a steering angle and velocity, which may be forwards or backwards. Thus, the program simulates charges such that the car repels objects while tending to move forward due to the large constant charge behind it. However, this is a very rough simulation of actual electrical potential fields for two reasons. First, we assume that the car is a point charge that has no volume, which would sometimes cause the back of the car to clip an object because the Lidar is located at the front of the car and may have already made it past the object. Secondly, because force equals mass times acceleration, if we were to strictly follow Coulomb’s Law, acceleration rather than velocity should have been directly proportional to $\frac{q}{r^{2}}$.</p>
                         <p>During the competition, our car became stuck at a local minimum, i.e. the net force vector was approximately zero, around 40 seconds in. Since then, we have implemented a node that prevents this from happening. The node subscribes to Ackermann commands and if the car’s velocity remains below 0.2 m/s for more than 4 seconds, the node will take over and drive the car backwards at an angle and then forwards at the opposite angle.</p>
                         <p>Our color detection node also attempted to detect a few of the challenge blobs. Specifically, it tried to detect the pictures of Karaman and Anders using facial feature detection with OpenCV. The facial feature detection returns boxes around the whole face and the eyes. To determine whose face has been detected, the node calculates the ratio of the face’s height to the right eye’s height and compares this ratio to a precomputed ratio for each face. Karaman’s (shown to the right) face-to-eye-height ratio was approximately 2.73 and Anders’s was 3.5.</p>
                     </div>
@@ -157,6 +154,164 @@
                     <p>The field of autonomous vehicles is rapidly expanding and will undoubtedly transform modern transportation. Heavily tested programs are far less prone to error than humans. Computers do not become tired and lose focus like humans do. They do not get distracted from driving, because driving well is their only goal. Once autonomous cars have gained currency, transportation will not only be safer, but also more efficient. Time-wise, autonomous vehicles will be able to drive closer together and faster while intelligently avoiding traffic jams. This will consequently lead to less pollution as cars spend less time on the road. I am so honored to have participated in the first summer of BWSI, programming advanced autonomous vehicles with the same kinds of sensors used by Google and other big companies.</p>
                     <p>Besides the technical part of programming autonomous vehicles, I also gained experience with working in a team on a complex project. Planning a software architecture and making the project modular became crucial as the challenges became more complicated. It is also critical to discover and take advantage of each member’s strengths so that the team can perform the most efficiently. Subsequently, it is important to trust your team members to complete their tasks well. Rather than have everyone work on the same task for fear of one member not being able to complete the task well, it is much more effective to entrust the task to one or two members who can explain their solution to the rest of the team later.</p>
                 </div>
+                <div id="thanks" class="section scrollspy container">
+                    <h3 class="center-align">Thanks</h3>
+                    <p>My time at BWSI has been one of the most rewarding four weeks of my life, and they have had a large impact on me. Autonomous vehicles, and robotics for that matter, are no longer a far-off, unknown subject to me. Developing autonomous vehicles could very well be the way I utilize my passion for Computer Science to beneficially impact the world. Thus, I am extremely thankful to the following people for making BWSI possible.</p>
+                    <br>
+                    <h5>Lead Instructors</h5>
+                    <table>
+                        <tr>
+                            <td>Professor Sertac Karaman</td>
+                            <td>MIT Aeronautics and Astonautics, LIDS, IDSS</td>
+                        </tr>
+                        <tr>
+                            <td>Ken Gregson</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                    </table>
+                    <h5>Technical Instructors</h5>
+                    <table>
+                        <tr>
+                            <td>Michael Boulet</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                        <tr>
+                            <td>Owen Guldner</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                    </table>
+                    <h5>Communications Instructor</h5>
+                    <table>
+                        <tr>
+                            <td>Jane Connor</td>
+                            <td>MIT Writing, Rhetoric, and Professional Communication</td>
+                        </tr>
+                    </table>
+                    <h5>Lead Associate Instructor</h5>
+                    <table>
+                        <tr>
+                            <td>Ariel Anders</td>
+                            <td>MIT Electrical Engineering & Computer Science</td>
+                        </tr>
+                    </table>
+                    <h5>Associate Instructors</h5>
+                    <table>
+                        <tr>
+                            <td>Hans Batra</td>
+                            <td>Needham Public Schools</td>
+                        </tr>
+                        <tr>
+                            <td>Cindy Cregier</td>
+                            <td>FRC Mentor</td>
+                        </tr>
+                        <tr>
+                            <td>Winter Guerra</td>
+                            <td>MIT Electrical Engineering & Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>Mubarik Mohamoud</td>
+                            <td>MIT Electrical Engineering & Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>Brian Plancher</td>
+                            <td>MIT Electrical Engineering & Computer Science</td>
+                        </tr>
+                        <tr>
+                            <td>Tim McGuiness</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                        <tr>
+                            <td>Mike Nickelson</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                        <tr>
+                            <td>Amanda Quigley</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                        <tr>
+                            <td>Navid Shahrestani</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                    </table>
+                    <h5>Guest Instructors</h5>
+                    <table>
+                        <tr>
+                            <td>Alexey Abramov</td>
+                            <td>Continental Corporation</td>
+                        </tr>
+                        <tr>
+                            <td>Oktay Arslan</td>
+                            <td>NASA Jet Propulsion Laboratory</td>
+                        </tr>
+                        <tr>
+                            <td>Renaud Detry</td>
+                            <td>NASA Jet Propulsion Laboratory</td>
+                        </tr>
+                        <tr>
+                            <td>Kyle Edelman</td>
+                            <td>NASA Jet Propulsion Laboratory</td>
+                        </tr>
+                        <tr>
+                            <td>Jeremie Papon</td>
+                            <td>NASA Jet Propulsion Laboratory</td>
+                        </tr>
+                    </table>
+                    <h5>Beaver Works Summer Program Director</h5>
+                    <table>
+                        <tr>
+                            <td>John Vivelecchia</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                    </table>
+                    <h5>Beaver Works Summer Program Assistant Director</h5>
+                    <table>
+                        <tr>
+                            <td>Lisa Kelly</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                    </table>
+                    <h5>Beaver Works Director</h5>
+                    <table>
+                        <tr>
+                            <td>Robert(Bob) Shin</td>
+                            <td>MIT Lincoln Laboratory</td>
+                        </tr>
+                    </table>
+                    <h5>Health Professionals</h5>
+                    <table>
+                        <tr>
+                            <td>Dr. Charmain Jackman</td>
+                            <td>Health Professional</td>
+                        </tr>
+                        <tr>
+                            <td>Denise Hayes</td>
+                            <td>Health Professional</td>
+                        </tr>
+                    </table>
+                    <h5>Residential Counselors</h5>
+                    <table>
+                        <tr>
+                            <td>Cindy Cregier</td>
+                            <td>Lead RC</td>
+                        </tr>
+                        <tr>
+                            <td>Alicia Cabrera-Mino</td>
+                            <td>MIT</td>
+                        </tr>
+                        <tr>
+                            <td>Hannah Diehl</td>
+                            <td>MIT</td>
+                        </tr>
+                        <tr>
+                            <td>Bryce Hwang</td>
+                            <td>MIT</td>
+                        </tr>
+                        <tr>
+                            <td>Jenny Wang</td>
+                            <td>MIT</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </main>
 
@@ -165,6 +320,8 @@
         </footer>
 
         <!-- Scripts -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
         <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.2.0/scrollreveal.min.js"></script>
         <script async type="text/javascript" src="https://use.fontawesome.com/6410c3e3d5.js"></script>
         <script type="text/x-mathjax-config">

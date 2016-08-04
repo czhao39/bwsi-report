@@ -104,9 +104,25 @@ nav a.button-collapse {
     width: 100%;
 }
 
-.divider {
-    width: 80%;
-    margin: 20px auto 0 auto;
+#thanks h5 {
+    text-align: center;
+}
+
+#thanks table {
+    margin-bottom: 30px;
+}
+
+#thanks td:first-child {
+    width: 50%;
+    padding-right: 15px;
+    text-align: right;
+}
+
+#thanks td:last-child {
+    width: 50%;
+    padding-left: 15px;
+    text-align: left;
+    font-style: italic;
 }
 
 footer {
