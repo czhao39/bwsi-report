@@ -109,7 +109,11 @@
                         <div class="center-align"><img class="report-img" src="static/img/rectblob.png"></div>
                         <p>The last part was visual servoing. The desired position of the center of the blob was the center of the image. Our program calculates the actual position of the center of the blob using the <tt>moments()</tt> function. The program then uses a PID controller to determine the steering angle of the car. The car had to drive into a box in front of the blob, so once the blob filled at least 11% of the screen horizontally, the car stopped and initiated a turn based on the color of the blob. However, the car could not turn immediately, because then it would hit the wall. Therefore, the program first backed up the car and then performed a quarter-turn. Each of these steps was written within a separate function, and each function called on the next once it was finished.</p>
                         <p>Our car was quite successful and was the only one to make all three turns without hitting the wall.</p>
-                        [insert turning video here]
+                        <div class="center-align">
+                            <video class="responsive-video" controls muted>
+                                <source src="static/img/blobturn.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                     <div id="week3" class="scrollspy section">
                         <h4>Week 3</h4>
