@@ -1,5 +1,6 @@
 body {
     font-weight: 300;
+    font-size: 1.2em;
 }
 
 header, main, footer {
@@ -30,7 +31,8 @@ nav a.button-collapse {
 }
 
 #main-content {
-    padding: 50px 5%;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #overview {
