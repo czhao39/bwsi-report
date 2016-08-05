@@ -8,7 +8,7 @@ $document.ready(function() {
 
     $(".parallax").parallax();
 
-    $(".scrollspy").scrollSpy();
+    $(".scrollspy").scrollSpy({scrollOffset: 0});
     var sr = ScrollReveal();
     sr.reveal(".report-img, .report-img-float", {duration: 1000});
 });
