@@ -109,6 +109,10 @@ nav a.button-collapse {
     margin-left: 10px;
 }
 
+.report-img-float img {
+    width: 100%;
+}
+
 #thanks h5 {
     text-align: center;
 }
