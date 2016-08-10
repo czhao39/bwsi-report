@@ -17,10 +17,6 @@ nav a.button-collapse {
     color: black;
 }
 
-.page-title {
-    font-size: 2.5rem;
-}
-
 #slide-out {
     padding-top: 40px;
 }
@@ -209,12 +205,26 @@ footer {
     }
 }
 
-@media (max-width: 640px) and (min-width: 376px) {
-    .page-title {font-size: 1.8rem;}
-    #racecar-parallax {height: 30vh;}
+@media only screen and (max-width: 640px) and (min-width: 376px) {
+    .page-title {
+        font-size: 3rem;
+    }
+    #racecar-parallax {
+        height: 30vh;
+    }
+    .overview-content p {
+        font-size: .9rem;
+    }
 }
 
-@media (max-width: 375px) {
-    .page-title {font-size: 1.2rem;}
-    #racecar-parallax {height: 20vh;}
+@media only screen and (max-width: 375px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    #racecar-parallax {
+        height: 20vh;
+    }
+    .overview-content p {
+        font-size: .9rem;
+    }
 }
