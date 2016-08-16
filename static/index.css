@@ -47,12 +47,8 @@ nav a.button-collapse {
     z-index: 0;
 }
 
-.overlay-screen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .1);
-    z-index: 1;
+.overview-content p {
+    font-size: 1.1rem;
 }
 
 #bw-logo {
