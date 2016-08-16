@@ -152,7 +152,7 @@
                     <h3 class="center-align">Technical Conclusions</h3>
                     <div id="results" class="scrollspy section">
                         <h4>Results</h4>
-                        <p>We programmed a RACECAR to autonomously drive around a course while avoiding obstacles and responding to colored blobs. The RACECAR used a Lidar scanner to determine distances to objects in polar coordinates, and a camera for blob detection. Using potential fields along with other additional force vectors, the car was able to avoid walls and other cars. However, our car failed to respond to a colored blob due to lighting conditions.</p>
+                        <p>Using the Robot Operating System (ROS), we programmed a RACECAR to autonomously drive around a course while avoiding obstacles and responding to colored blobs. We did so while implementing a modular, extensible software architecture. The RACECAR used a Lidar scanner to determine distances to objects in polar coordinates. The program represents each point detected by the Lidar as a charge that produces a force vector on the car, causing the car to evade objects. The program also adds additional force vectors to move the car forwards around the course and towards empty space. To detect colored blobs, the program processes images from the camera, filtering out the desired colors and performing contour detection. Our car was successfully able to drive around a race course, although it failed to respond to a colored blob in the Grand Prix challenge due to lighting conditions.</p>
                     </div>
                     <div id="learnings" class="scrollspy section">
                         <h4>Learnings</h4>
