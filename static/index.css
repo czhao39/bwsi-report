@@ -93,9 +93,12 @@ nav a.button-collapse {
 }
 
 .report-img {
+    width: 90%;
+    margin: 20px auto 30px auto;
+}
+
+.report-img img {
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .report-img-float {
@@ -191,6 +194,9 @@ footer {
     #main-content {
         padding-left: 0;
         padding-right: 0;
+    }
+    .report-img {
+        width: 100%;
     }
     .report-img-float {
         width: 50%;
