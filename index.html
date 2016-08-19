@@ -63,7 +63,7 @@
 
         <main>
             <div id="overview" class="valign-wrapper scrollspy">
-                <img id="overview-bg" src="static/img/background.png">
+                <img id="overview-bg" src="static/img/background.jpg">
                 <a href="https://beaverworks.ll.mit.edu/CMS/bw/" target="_blank"><img id="bw-logo" src="static/img/bw.png" alt="Beaver Works logo"></a>
                 <div class="valign center-align overview-content container">
                     <h1 class="page-title">2016 BWSI Report</h1>
@@ -74,7 +74,7 @@
             </div>
 
             <div id="racecar-parallax" class="parallax-container">
-                <div class="parallax"><img src="static/img/racecar.png" alt="RACECAR"></div>
+                <div class="parallax"><img src="static/img/racecar.jpg" alt="RACECAR"></div>
             </div>
 
             <div id="main-content">
@@ -87,24 +87,24 @@
                         <p>ROS is an open source framework which provides many tools and libraries that greatly ease robot software development (<a href="http://www.ros.org/about-ros/" target="_blank">http://www.ros.org/about-ros/</a>). It is well-established and used in industry. For example, the NASA/GM Robonaut 2 aboard the International Space Station runs ROS (<a href="http://shop.oreilly.com/product/0636920024736.do" target="_blank">Programming Robots with ROS</a>). ROS's guiding principle is modularity, which is one of the reasons for its use in complex projects. A ROS package consists of <strong>nodes</strong>, which are simply programs, that perform tasks and communicate to each other through <strong>messages</strong>. Nodes can publish and/or subscribe to messages on a <strong>topic</strong>. This peer-to-peer structure is what gives ROS its modularity, which greatly simplifies delegating work and testing.</p>
                         <p>Kyle Edelman from the NASA Jet Propulsion Laboratory (JPL) gave two lectures on control systems. The goal of a controller is to bring the error, which is calculated by subtracting the current state from the desired state (or vice versa, although all other calculations will have to be flipped accordingly), to zero. In open-loop control, the controller only takes in the desired state as input, while in closed-loop control, the controller also takes in output from sensors as input. In other words, closed-loop control receives feedback whereas open-loop control does not (see Figure 1).</p>
                         <div class="center-align report-img">
-                            <img src="static/img/controller.png" alt="controller diagram">
+                            <img src="static/img/controller.jpg" alt="controller diagram">
                             <div class="grey-text"><em>Figure 1.</em> Basic control system demonstrating the difference between open-loop and closed-loop control.</div>
                         </div>
                         <p>Edelman explained two different controllers: bang-bang and proportional-integral-derivative (PID). Bang-bang is the simplest type of controller, but it may never reach a steady state. A bang-bang controller consists of several discrete groups of inputs that each produce a certain, hard-coded output. A robot whose direction is controlled by a bang-bang controller may produce a graph like that in Figure 2.</p>
                         <div class="center-align report-img">
-                            <img src="static/img/bangbang.png" alt="bang-bang graph">
+                            <img src="static/img/bangbang.jpg" alt="bang-bang graph">
                             <div class="grey-text"><em>Figure 2.</em> Position vs. time graph of a bang-bang controller.</div>
                         </div>
                         <p>On the other hand, PID controllers produce an output based on the error, the integral of the error with respect to time, and the derivative of the error with respect to time. Formally,</p>
                         <p>$$u(t) = K_{p}e(t) + K_{i}\int e(\tau)d\tau + K_{d}\frac{de(t)}{dt}$$</p>
                         <p>where $K_p$, $K_i$, and $K_d$ are nonnegative coefficients for the proportional, integral, and derivative terms, respectively. The proportional term is the main term, the integral term helps to drive the error to zero more quickly, and the derivative term dampens the effect of the other terms to provide stability. In unstable systems, the error increases exponentially as the controller repeatedly overshoots the desired state. An unstable system may produce a graph like that in Figure 3.</p>
                         <div class="center-align report-img">
-                            <img src="static/img/unstable.png" alt="unstable PID graph">
+                            <img src="static/img/unstable.jpg" alt="unstable PID graph">
                             <div class="grey-text"><em>Figure 3.</em> Position vs. time graph of an unstable PID controller.</div>
                         </div>
                         <p>On the other hand, a properly tuned PID controller would produce a graph like that in Figure 4, eventually resulting in a steady state.</p>
                         <div class="center-align report-img">
-                            <img src="static/img/stable.png" alt="stable PID graph">
+                            <img src="static/img/stable.jpg" alt="stable PID graph">
                             <div class="grey-text"><em>Figure 4.</em> Position vs. time graph of a stable PID controller.</div>
                         </div>
                         <p>The coefficients are generally tuned empirically. To do so, initially only have a proportional term $K_p$ and increase $K_p$ until the system becomes unstable. Then lower $K_p$ so that the system becomes stable and add an integral term $K_i$, increasing $K_i$ until the system reaches a steady state in reasonable time. Then add a derivative term $K_d$, increasing $K_d$ until the system is stable.</p>
@@ -116,13 +116,13 @@
                         <h4>Week 2</h4>
                         <p>The main goal of the second week was to learn basic image processing with <a href="http://opencv.org/" target="_blank">OpenCV</a> and <a href="http://www.numpy.org/" target="_blank">NumPy</a>. The week concluded with a race in which the car had to detect and drive to a colored blob (a rectangular piece of construction paper) and then turn left or right based on the color of the blob&mdash;left if red, right if green.</p>
                         <div class="report-img-float right">
-                            <img src="static/img/hsv.png" alt="hsv color space">
+                            <img src="static/img/hsv.jpg" alt="hsv color space">
                             <div class="grey-text center-align"><em>Figure 5.</em> HSV color space. Picture credits: <a href="https://chroma.readthedocs.io/en/latest/" target="_blank">Chroma</a>.</div>
                         </div>
                         <p>There were two lectures on robot perception and image processing, one by Professor Sertac Karaman from MIT Aeronautics and Astronautics, and one by Alexey Abramov from the Continental Corporation. First, we learned about the Hue-Saturation-Value (HSV) color space (see Figure 5), which is generally used in image processing because of the hue property’s resistance to changes in brightness. The lecturers also explained edge detection and object perception algorithms such as the RANSAC algorithm and Hough transforms. There were also two lectures on visual servoing by Renaud Detry and Jeremie Papon from JPL. Visual servoing is the act of controlling a robot’s motion based on visual feedback, i.e. data collected from visual sensors.</p>
                         <p>The first part of the week’s problem was blob detection using OpenCV. OpenCV is a powerful library that provides Python bindings for efficient image processing algorithms written in C++. We first used the OpenCV <tt>SimpleBlobDetector</tt> class to detect blobs, and then we switched over to OpenCV’s contour methods for more functionality. Our blob detector first filters out a certain color, either red or green in this case, using OpenCV’s <tt>inRange()</tt> function. We empirically tuned the minimum and maximum HSV values to retain blobs of the desired color while filtering out everything else. We then used the <tt>findContours()</tt> function to find the blobs and determine information about them such as size and center. We ignored all contours with areas less than 500 px<sup>2</sup>. Then we smoothed out the contours using the <tt>approxPolyDP()</tt> function and filtered out any contours that were not four-sided. Finally, we used the <tt>drawContours()</tt> function to draw the processed blobs on the original image (see Figure 6).</p>
                         <div class="center-align report-img">
-                            <img src="static/img/rectblob.png">
+                            <img src="static/img/rectblob.jpg">
                             <div class="grey-text"><em>Figure 6.</em> The blob detection algorithm detecting a green rectangle.</div>
                         </div>
                         <p>The last part was visual servoing. The desired position of the center of the blob was the center of the image, calculated as width of the image divided by two. Our program calculates the actual position of the center of the blob using the <tt>moments()</tt> function. The program then uses a PID controller to control the steering angle of the car. The car had to drive into a box in front of the blob, so once the blob filled at least 11% of the screen horizontally, the car stopped and initiated a turn based on the color of the blob. However, the car could not turn immediately because then it would hit the wall. Therefore, the program first backed up the car and then performed a quarter-turn. Each of these steps was written within a separate function, and each function called on the next once it was finished.</p>
@@ -139,13 +139,13 @@
                         <p>The main goal of the third week was to learn how to program our cars to explore, i.e. to autonomously drive around while evading objects. The week concluded with a challenge to explore a course while detecting blobs. There were red, green, blue, and yellow blobs, as well as four challenge blobs that included photos of Professor Sertac Karaman, Ariel Anders, a cat, and a RACECAR.</p>
                         <p>As this problem was rather complex, we decided to lay out a software architecture before beginning coding. We defined nodes and custom message types as shown in Figure 7. Using this architecture, we were able to take advantage of ROS’s modularity to delegate tasks to group members more efficiently and to test separate parts of the program more easily.</p>
                         <div class="center-align report-img">
-                            <img src="static/img/architecture.png" alt="architecture diagram">
+                            <img src="static/img/architecture.jpg" alt="architecture diagram">
                             <div class="grey-text"><em>Figure 7.</em> Software architecture for week three.</div>
                         </div>
                         <p>Our first strategy for environment exploration was to always drive towards the middle of the largest empty space detected by the Lidar. Our program used a PID controller very similar to the previous week’s to move the car towards the center of the largest space. This algorithm worked well when maneuvering through narrow corridors with walls on both sides of the car. However, when driving through an area with lots of empty space, the car would often turn too sharply and hit the wall.</p>
                         <p>Later, Professor Karaman and a few others lectured on environment exploration. One solution described was potential fields. The idea of potential fields tries to emulate Coulomb’s Law, which states that $F=\frac{kq_{1}q_{2}}{r^{2}}$ where $F$ is the force between the objects, $q_1$ is the charge of one object, $q_2$ is the charge of the other object, $r$ is the distance between the objects, and $k$ is a constant (Coulomb's constant). Every point returned by the Lidar is given some set charge (we will say it is negative for this example). There is also a large constant negative charge placed behind the car to push it forwards. The car itself is also negative. Our program then sums up all the force vectors produced by these charges to determine the net force on the car. The program uses this net force vector to calculate a steering angle and velocity, which may be forwards or backwards. Thus, the program simulates charges such that the car repels objects while tending to move forward due to the large constant charge behind it. However, this is a very rough simulation of actual electrical potential fields for two reasons. First, we assume that the car is a point charge that has no volume, which would sometimes cause the back of the car to clip an object because the Lidar is located at the front of the car and may have already made it past the object. To help account for this, we subtracted the distance from the Lidar to the edge of the car from each range returned by the Lidar. Secondly, because force equals mass times acceleration, if we were to strictly follow Coulomb’s Law, acceleration rather than velocity should have been directly proportional to $\frac{q}{r^{2}}$.</p>
                         <div class="report-img-float right">
-                            <img src="static/img/facedetect.png" alt="face detection example">
+                            <img src="static/img/facedetect.jpg" alt="face detection example">
                             <div class="grey-text center-align"><em>Figure 8.</em> Facial feature detection algorithm used to detect the challenge photos containing faces. Photo credits: BWSI instructors.</div>
                         </div>
                         <p>Approximately 40 seconds into the competition, our car became stuck at a local minimum, i.e. the net force vector was approximately zero. Since then, we have implemented a node that prevents this from happening. The node subscribes to Ackermann commands send to the VESC speed controller and if the car’s velocity remains below 0.2 m/s for more than 3 seconds, the node will take over and drive the car backwards at an angle and then forwards at the opposite angle.</p>
@@ -157,7 +157,7 @@
                         <p>The last week included several challenges built on top of previous weeks’ challenges. For example, the first challenge was the same as week 3’s (exploring while avoiding obstacles and detecting colored shapes), but more shapes were possible and our program had to output the name of the shape. The shapes were squares, crosses, and circles. Once again, we used the <tt>approxPolyDP()</tt> function, but we decreased the amount of smoothing so that sides of the shape would not be lost. We categorized four-sided contours as squares, eleven- to thirteen-sided objects as crosses, and seven- to nine-sided objects as circles since our configuration of <tt>approxPolyDP()</tt> tended to detect circles as having eight sides.</p>
                         <p>For the final challenges, which involved driving around a race course (see Figure 9), we decided to combine two strategies. We continued to use potential fields, as this strategy was good at avoiding walls and other cars. On top of this, the program adds a strong force vector pointing in the direction of the farthest point detected by the Lidar. To account for noise, the program calculates the average of every four points (which make up one degree) returned by the Lidar. This force vector helped ensure that the car continued to drive around the course.</p>
                         <div class="right report-img-float">
-                            <img src="static/img/course.png" alt="course map">
+                            <img src="static/img/course.jpg" alt="course map">
                             <div class="grey-text center-align"><em>Figure 9.</em> Map of the course used for the final challenges. Picture credits: BWSI instructors.</div>
                         </div>
                         <p>We also had to account for noise when retrieving blob data. Thus, we required the blob detector to detect a blob at least three times within one second before the car responded. There were also red and green blobs in the environment that we did not want the blob detector to detect. For example, red or green shirts and table cloths would often trigger the blob detector. Since there was a blue blob on the wall before the shortcut, we required the program to first detect a blue blob before looking for red and green blobs, and once a red or green blob was responded to, the program ignored any other blobs.</p>
@@ -183,7 +183,7 @@
                         <h4>Future</h4>
                         <p>In the future, I would like to more thoroughly explore and incorporate the capabilities of the RACECAR’s sensors (see Figure 10). For example, during BWSI, we did not take advantage of the ZED stereo camera’s 3D sensing capabilities, instead combining the two photos taken by the stereo camera into a 2D picture for image processing. Also, I would like to test out the Structure sensor, which uses structured light rather than two cameras to perceive depth, and compare it to the ZED camera. Lastly, I would like to utilize the RACECAR’s inertial mass unit for proprioceptive data to complement data gathered by the RACECAR’s exteroceptive sensors.</p>
                         <div class="center-align report-img">
-                            <img src="static/img/racecar_parts.png" alt="course map">
+                            <img src="static/img/racecar_parts.jpg" alt="course map">
                             <div class="grey-text center-align"><em>Figure 10.</em> Componenets of a RACECAR. Picture credits: BWSI instructors.</div>
                         </div>
                         <p>As for a future project, I would like to program a RACECAR to autonomously explore and map an unknown area. While doing so, the program would have to intelligently filter out dynamic objects so that they are no included in the map. Once the area has been mapped, the program will be able to take in a goal position on the map and drive to that position. The global planner would try to determine an optimal path using an algorithm such as RRT*, and the local planner would evade both static and dynamic objects along the way.</p>
