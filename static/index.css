@@ -37,7 +37,7 @@ nav a.button-collapse {
     top: 0;
     left: 250px;
     right: 0;
-    bottom: 0;
+    height: 100vh;
 }
 
 #overview-bg {
@@ -54,7 +54,7 @@ nav a.button-collapse {
 
 #bw-logo {
     position: absolute;
-    right: 0;
+    right: 1rem;
     top: 0;
     width: 30%;
     z-index: 2;
@@ -219,6 +219,9 @@ footer {
     .overview-content p {
         font-size: .9rem;
     }
+    #bw-logo {
+        top: .5rem;
+    }
 }
 
 @media only screen and (max-width: 375px) {
@@ -230,5 +233,8 @@ footer {
     }
     .overview-content p {
         font-size: .9rem;
+    }
+    #bw-logo {
+        top: 1rem;
     }
 }
