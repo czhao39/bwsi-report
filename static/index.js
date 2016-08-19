@@ -1,6 +1,10 @@
 $document = $(document);
 
 $document.ready(function() {
+    console.log(window.innerHeight);
+    $("#overview").css("height", window.innerHeight);
+    $("#racecar-parallax").css("margin-top", window.innerHeight - 65);
+    
     Materialize.showStaggeredList("#slide-out");
 
     Materialize.fadeInImage("#overview");
