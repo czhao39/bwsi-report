@@ -211,7 +211,7 @@ footer {
 
 @media only screen and (max-width: 640px) and (min-width: 376px) {
     .page-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     #racecar-parallax {
         height: 30vh;
@@ -223,7 +223,7 @@ footer {
 
 @media only screen and (max-width: 375px) {
     .page-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     #racecar-parallax {
         height: 20vh;
