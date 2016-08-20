@@ -1,9 +1,8 @@
 $document = $(document);
 
 $document.ready(function() {
-    console.log(window.innerHeight);
     $("#overview").css("height", window.innerHeight);
-    $("#racecar-parallax").css("margin-top", window.innerHeight - 65);
+    $("#racecar-parallax").css({"margin-top": window.innerHeight-65, "height": window.innerHeight*.6});
     
     Materialize.showStaggeredList("#slide-out");
 
