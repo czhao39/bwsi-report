@@ -110,6 +110,10 @@ nav a.button-collapse {
     width: 100%;
 }
 
+video {
+    width: 100%;
+}
+
 #thanks h5 {
     text-align: center;
 }
