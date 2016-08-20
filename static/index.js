@@ -1,9 +1,23 @@
 $document = $(document);
 
 $document.ready(function() {
-    $("#overview").css("height", window.innerHeight);
-    $("#racecar-parallax").css({"margin-top": window.innerHeight-65, "height": window.innerHeight*.6});
-    
+    $parallax = $("#racecar-parallax");
+    $overview = $("#overview");
+    var height = window.innerHeight;
+    $overview.css("height", height);
+    $(window).resize(function() {
+        $parallax.css("margin-top", height-65);
+        if (window.innerWidth <= 375)
+            $parallax.css("height", height*.2);
+        else if (window.innerWidth <= 640)
+            $parallax.css("height", height*.3);
+        else if (window.innerWidth <= 992)
+            $parallax.css("height", height*.4);
+        else
+            $parallax.css("height", height*.6);
+    });
+    $(window).resize();
+
     Materialize.showStaggeredList("#slide-out");
 
     Materialize.fadeInImage("#overview");
