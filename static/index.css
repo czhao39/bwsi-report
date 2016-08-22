@@ -220,14 +220,14 @@ footer {
     .page-title {
         font-size: 2.5rem;
     }
-    #racecar-parallax {
-        height: 30vh;
-    }
     .overview-content p {
         font-size: .9rem;
     }
     #bw-logo {
         top: .5rem;
+    }
+    #racecar-parallax {
+        height: 30vh;
     }
 }
 
@@ -238,13 +238,13 @@ footer {
     .page-title {
         font-size: 2rem;
     }
-    #racecar-parallax {
-        height: 30vh;
-    }
     .overview-content p {
         font-size: .9rem;
     }
     #bw-logo {
         top: 1rem;
+    }
+    #racecar-parallax {
+        height: 30vh;
     }
 }
