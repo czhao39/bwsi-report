@@ -3,8 +3,8 @@ $document = $(document);
 $document.ready(function() {
     $parallax = $("#racecar-parallax");
     $overview = $("#overview");
-    var height = window.innerHeight;
-    $overview.css("height", height);
+    var height = Math.max(window.innerHeight, $(".overview-content").height()*1.2);
+    $overview.height(height);
     $(window).resize(function() {
         $parallax.css("margin-top", height-65);
         if (window.innerWidth <= 375)
