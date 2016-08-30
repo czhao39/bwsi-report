@@ -25,7 +25,12 @@ nav a.button-collapse {
 
 #slide-out li {
     opacity: 0;
-    padding: 10px 0;
+}
+
+#slide-out li a {
+    padding: 10px 30px;
+    height: auto;
+    font-size: 1.1rem;
 }
 
 #main-content {
@@ -57,6 +62,7 @@ nav a.button-collapse {
 
 .overview-content p {
     font-size: 1.2rem;
+    line-height: 1.5;
 }
 
 #bw-logo {
@@ -229,7 +235,6 @@ footer {
     .overview-content p {
         font-size: 1rem;
         letter-spacing: normal;
-        line-height: 1.5;
     }
     #bw-logo {
         top: .7rem;
@@ -247,7 +252,6 @@ footer {
     .overview-content p {
         font-size: 1rem;
         letter-spacing: normal;
-        line-height: 1.5;
     }
     #bw-logo {
         top: .8rem;

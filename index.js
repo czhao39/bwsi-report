@@ -21,7 +21,7 @@ $document.ready(function() {
     Materialize.showStaggeredList("#slide-out");
 
     Materialize.fadeInImage("#overview");
-    $(".button-collapse").sideNav({closeOnClick: false, menuWidth: 250});
+    $(".button-collapse").sideNav({closeOnClick: false, menuWidth: 270});
 
     $(".parallax").parallax();
 
