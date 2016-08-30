@@ -56,7 +56,7 @@ nav a.button-collapse {
     position: absolute;
     right: 1rem;
     top: 0;
-    width: 30%;
+    width: 30vw;
     z-index: 2;
 }
 
@@ -205,8 +205,11 @@ footer {
     .report-img-float {
         width: 50%;
     }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 640px) {
     #bw-logo {
-        width: 50%;
+        width: 50vw;
     }
     #racecar-parallax {
         height: 40vh;
@@ -224,7 +227,8 @@ footer {
         font-size: .9rem;
     }
     #bw-logo {
-        top: .5rem;
+        top: .7rem;
+        width: 60vw;
     }
     #racecar-parallax {
         height: 30vh;
@@ -242,7 +246,8 @@ footer {
         font-size: .9rem;
     }
     #bw-logo {
-        top: 1rem;
+        top: .8rem;
+        width: 70vw;
     }
     #racecar-parallax {
         height: 30vh;
