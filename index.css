@@ -34,8 +34,7 @@ nav a.button-collapse {
 }
 
 #main-content {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 5%;
 }
 
 #overview {
@@ -206,10 +205,6 @@ footer {
     }
     #overview {
         left: 0;
-    }
-    #main-content {
-        padding-left: 0;
-        padding-right: 0;
     }
     .report-img {
         width: 100%;
